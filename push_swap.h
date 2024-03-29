@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 11:35:19 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/28 15:20:46 by natalia       ########   odam.nl         */
+/*   Updated: 2024/03/29 12:53:46 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ void	sort_five(t_list **stack_a, t_list **stack_b);
 void	sort_three(t_list **stack_a);
 int		get_max(t_list *head);
 int		get_min(t_list *head);
+void	sort_bigger(t_list **stack_a, t_list **stack_b, int list_size);
+void	prep_for_push(t_list **stack, t_list *top_node, char stack_name);
+int	sorted(t_list **head);
 
 /*operations functions*/
 void	swap(t_list **head, char *operation);

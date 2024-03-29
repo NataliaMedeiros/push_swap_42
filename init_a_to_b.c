@@ -71,7 +71,6 @@ static void	set_target_a(t_list *a, t_list *b)
 
 static void	cost_analysis_a(t_list *a, t_list *b) //Define a functio that analyses the cost of the `a` node along with it's target `b` node, which is the sum of the number of instructions for both the nodes to rotate to the top of their stacks
 {
-	printf("Entrei no cost_analysis_a\n");
 	int	len_a; //To store the length of stack `a`
 	int	len_b; //To store the length of stack `b`
 
@@ -79,8 +78,6 @@ static void	cost_analysis_a(t_list *a, t_list *b) //Define a functio that analys
 	len_b = ft_lstsize(b);
 	while (a) //Loop through each node until the end of the stack is reached
 	{
-		if (a->target_node != NULL)
-			printf("target: %d\n", a->target_node->numb);
 		a->push_cost = a->index; //Assign the current `a` node's push cost, its' index value
 		if (!(a->is_above_median)) //Check if the above_median data is false, meaning it is below median
 			a->push_cost = len_a - (a->index); //If so, update `a` node's push cost to the stack's length - index
@@ -97,7 +94,6 @@ static void	cost_analysis_a(t_list *a, t_list *b) //Define a functio that analys
 
 void	set_cheapest(t_list *stack) //Define a function that sets a node's `cheapest` attribute as `true` or `false`
 {
-	printf("Entrei no set_cheapest\n");
 	long			cheapest_value; //To store the value of the cheapest node so far
 	t_list	*cheapest_node; //To store a pointer to the cheapest node so far
 
@@ -119,9 +115,7 @@ void	set_cheapest(t_list *stack) //Define a function that sets a node's `cheapes
 void	init_nodes_a(t_list *stack_a, t_list *stack_b) //Define a function that combines all the functions needed to prepare stack `a`, ready for our pushing and sorting. These functions set the data inside the node's structure
 {
 	current_index(stack_a);
-	print_index("current_index A", stack_a);
 	current_index(stack_b);
-	print_index("current_index B", stack_b);
 	set_target_a(stack_a, stack_b);
 	cost_analysis_a(stack_a, stack_b);
 	set_cheapest(stack_a);

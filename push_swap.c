@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 11:35:14 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/28 14:56:32 by natalia       ########   odam.nl         */
+/*   Updated: 2024/03/29 12:33:56 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,19 @@ t_list	*include_numbers(char **numbers)
 	return (stack_a);
 }
 
+void	free_stack(t_list **stack)
+{
+	t_list	*temp;
+
+	while (*stack)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+	*stack = NULL;
+}
+
 void	push_swap(char **numbers)
 {
 	t_list	*stack_a;
@@ -74,19 +87,16 @@ void	push_swap(char **numbers)
 	stack_b = NULL;
 	i = 0;
 	stack_a = include_numbers(numbers);
-	print_stack("Initial Stack", stack_a);
-	/*Ja implementeo PREV na minha linked list*/
+	// print_stack("Initial Stack", stack_a);
 	sort(&stack_a, &stack_b);
-	print_stack("Stack B", stack_b);
-	print_stack("Stack After Sorting", stack_a);
-	//free_stack(&stack_a);
+	// print_stack("Stack After Sorting", stack_a);
+	free_stack(&stack_a);
 }
 
 int	main(int argc, char **argv)
 {
 	char	**numbers;
 
-	/*This if handle when there're no argv to the program*/
 	if (argc < 2)
 		return (1);
 	if (argc == 2)
@@ -99,7 +109,6 @@ int	main(int argc, char **argv)
 			free_array(numbers);
 		error_exit();
 	}
-	//fazer melhorias na implementacao do iniciar stack
 	push_swap(numbers);
 	if (argc == 2)
 		free_array(numbers);

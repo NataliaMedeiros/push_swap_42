@@ -11,6 +11,7 @@ FILES = push_swap \
 		sort_small \
 		init_a_to_b \
 		init_b_to_a \
+		sort_bigger \
 
 BONUS_FILES = checker \
 			bonus_error_check \
