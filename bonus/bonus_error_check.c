@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   handle_errors.c                                    :+:    :+:            */
+/*   bonus_error_check.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/03/27 11:40:14 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/04/02 12:55:49 by natalia       ########   odam.nl         */
+/*   Created: 2024/01/31 12:20:54 by nmedeiro      #+#    #+#                 */
+/*   Updated: 2024/04/02 16:59:20 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	error_exit(void)
 {

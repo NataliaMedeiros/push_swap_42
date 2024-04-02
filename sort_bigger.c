@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/29 12:49:35 by natalia       #+#    #+#                 */
-/*   Updated: 2024/04/02 12:23:15 by natalia       ########   odam.nl         */
+/*   Updated: 2024/04/02 17:13:19 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	move_b_to_a(t_list **a, t_list **b)
 	push(b, a, "pa");
 }
 
-void	init_and_move_a(t_list **stack_a, t_list **stack_b)
+static void	init_and_move_a(t_list **stack_a, t_list **stack_b)
 {
 	init_nodes_a(*stack_a, *stack_b);
 	move_a_to_b(stack_a, stack_b);

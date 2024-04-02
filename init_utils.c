@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   init.utils.c                                       :+:    :+:            */
+/*   init_utils.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/02 11:58:45 by natalia       #+#    #+#                 */
-/*   Updated: 2024/04/02 11:58:46 by natalia       ########   odam.nl         */
+/*   Updated: 2024/04/02 13:17:30 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	current_index(t_list *stack)
 	while (stack)
 	{
 		stack->index = i;
-		if (i <= median)
+		if (i < median)
 			stack->is_above_median = true;
 		else
 			stack->is_above_median = false;

@@ -1,6 +1,6 @@
 NAME = push_swap
 BONUS = checker
-MYLIB = my_library/my_library.a
+MYLIB = ./my_library/my_library.a
 
 FILES = push_swap \
 		handle_errors \
@@ -15,11 +15,11 @@ FILES = push_swap \
 		init_utils \
 		rotations \
 
-BONUS_FILES = checker \
-			bonus_error_check \
-			bonus_utils \
-			bonus_linked_list_utils \
-			bonus_operations \
+BONUS_FILES = bonus/checker \
+			bonus/bonus_error_check \
+			bonus/bonus_utils \
+			bonus/bonus_linked_list_utils \
+			bonus/bonus_operations \
 
 CFILES = $(FILES:%=%.c)
 CBONUS = $(BONUS_FILES:%=%.c)
