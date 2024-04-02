@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   free_utils.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: nmedeiro <nmedeiro@student.codam.nl>         +#+                     */
+/*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 14:48:47 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/27 14:48:48 by nmedeiro      ########   odam.nl         */
+/*   Updated: 2024/03/29 12:58:10 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,17 @@ void	free_array(char **args)
 		free (args[i--]);
 	if (args)
 		free (args);
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*temp;
+
+	while (*stack)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+	*stack = NULL;
 }

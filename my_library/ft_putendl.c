@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_putendl.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: nmedeiro <nmedeiro@student.codam.nl>         +#+                     */
+/*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 15:16:15 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/27 11:43:55 by nmedeiro      ########   odam.nl         */
+/*   Updated: 2024/04/02 12:29:37 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

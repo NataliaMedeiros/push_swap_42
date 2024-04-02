@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 11:35:19 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/29 12:53:46 by natalia       ########   odam.nl         */
+/*   Updated: 2024/04/02 12:18:49 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,20 @@ void	push(t_list **head_src, t_list **head_dest, char *operation);
 void	rotate(t_list **head, char *operation);
 void	reverse_rotate(t_list **head, char *operation);
 
-/*REMOVER*/
-void	print_stack(char *message, t_list *top);
-void	print_index(char *message, t_list *top);
-void	print_target(char *message, t_list *top);
-
-
 void	init_nodes_a(t_list *a, t_list *b);
 void	set_cheapest(t_list *stack);
 void	current_index(t_list *stack);
 void	init_nodes_b(t_list *a, t_list *b);
+void	free_stack(t_list **stack);
+t_list	*find_max(t_list *stack);
+void	move_b_to_a(t_list **a, t_list **b);
+void	move_a_to_b(t_list **stack_a, t_list **stack_b);
+void	set_cheapest(t_list *stack);
+void	current_index(t_list *stack);
+t_list	*find_max(t_list *stack);
+t_list	*find_min(t_list *stack);
+t_list	*get_cheapest(t_list *stack);
+void	rotate_both(t_list **stack_a, t_list **stack_b, t_list *cheapest_node);
+void	rev_rotate_both(t_list **a, t_list **b, t_list *cheapest_node);
 
 #endif

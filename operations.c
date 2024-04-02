@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/01/15 12:11:57 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/28 10:17:30 by natalia       ########   odam.nl         */
+/*   Updated: 2024/04/02 12:22:12 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	swap(t_list **head, char *operation)
 	(*head)->next = new_head->next;
 	new_head->next = (*head);
 	*head = new_head;
-	ft_putendl(operation);
+	if (operation[0] != '\0')
+		ft_putendl(operation);
 }
 
 void	push(t_list **head_src, t_list **head_dest, char *operation)
@@ -35,37 +36,6 @@ void	push(t_list **head_src, t_list **head_dest, char *operation)
 	else
 		temp->next = *head_dest;
 	*head_dest = temp;
-	ft_putendl(operation);
-}
-
-void	rotate(t_list **head, char *operation)
-{
-	t_list	*last;
-	t_list	*aux;
-
-	last = *head;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = *head;
-	aux = *head;
-	(*head) = (*head)->next;
-	aux->next = NULL;
-	ft_putendl(operation);
-}
-
-void	reverse_rotate(t_list **head, char *operation)
-{
-	t_list	*last;
-	t_list	*aux;
-
-	last = *head;
-	while (last->next != NULL)
-	{
-		aux = last;
-		last = last->next;
-	}
-	last->next = *head;
-	*head = last;
-	aux->next = NULL;
-	ft_putendl(operation);
+	if (operation[0] != '\0')
+		ft_putendl(operation);
 }

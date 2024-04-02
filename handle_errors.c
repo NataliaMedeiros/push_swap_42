@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   handle_errors.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: nmedeiro <nmedeiro@student.codam.nl>         +#+                     */
+/*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 11:40:14 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/27 14:37:12 by nmedeiro      ########   odam.nl         */
+/*   Updated: 2024/04/02 12:20:07 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	check_doubles(char **argv)
 	return (0);
 }
 
-/*1 true 0 false*/
 int	is_valid(char **argv)
 {
 	long	n;

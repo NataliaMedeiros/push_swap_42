@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/06 21:37:34 by natalia       #+#    #+#                 */
-/*   Updated: 2024/03/27 14:58:54 by nmedeiro      ########   odam.nl         */
+/*   Updated: 2024/04/02 11:59:28 by natalia       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,10 @@ void	ft_lstadd_back(t_list **head, void *content)
 {
 	t_list	*current_node;
 	t_list	*new_node;
-	//t_list	*prev_node;
 
 	current_node = *head;
 	while (current_node->next != NULL)
 	{
-		//prev_node = current_node;
 		current_node = current_node->next;
 	}
 	new_node = ft_lstnew(content);

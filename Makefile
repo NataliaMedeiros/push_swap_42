@@ -8,10 +8,12 @@ FILES = push_swap \
 		linked_list \
 		sort \
 		operations \
-		sort_small \
 		init_a_to_b \
 		init_b_to_a \
 		sort_bigger \
+		sort_utils \
+		init_utils \
+		rotations \
 
 BONUS_FILES = checker \
 			bonus_error_check \
