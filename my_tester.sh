@@ -16,7 +16,7 @@ yellow_color(){
 }
 
 execute_test(){
-	checker_output=$(./push_swap "$ARG" | ./checker_Mac "$ARG")
+	checker_output=$(./push_swap "$ARG" | ./checker "$ARG")
 
 	if [ "$checker_output" = "OK" ]; then
 		green_color "OK"
@@ -27,42 +27,43 @@ execute_test(){
 }
 
 make re
+make bonus
 
 echo ""
 echo ""
 echo "Test edges cases - no number - Should display ERROR"
 echo "-----"
-yellow_color "1:"; ARG="a b c d e f g h i"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "2:"; ARG="1 2 9 3 a"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "3:"; ARG="8 2 4 avocado 5 10 29"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "4:"; ARG=" ++4 5 6 2"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "5:"; ARG="\ 5 8 2 "; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "6:"; ARG="? 0 2 5 1"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "7:"; ARG="-10 10 +5 3 --8 -5"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "8:"; ARG="10 ++5 3 8 4 5 11 21 105"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "10:"; ARG="1111 / 1114 1115 1116 111117 1111"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "11:"; ARG="10 + 5 3 8 4 5 11 21 105"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "12:"; ARG="10 5 3 8 4 5 11 21 105 -"; ./push_swap $ARG | ./checker_Mac $ARG
+yellow_color "1:"; ARG="a b c d e f g h i"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "2:"; ARG="1 2 9 3 a"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "3:"; ARG="8 2 4 avocado 5 10 29"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "4:"; ARG=" ++4 5 6 2"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "5:"; ARG="\ 5 8 2 "; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "6:"; ARG="? 0 2 5 1"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "7:"; ARG="-10 10 +5 3 --8 -5"; ./push_swap $ARG | ./checker $ARG
+yellow_color "8:"; ARG="10 ++5 3 8 4 5 11 21 105"; ./push_swap $ARG | ./checker $ARG
+yellow_color "10:"; ARG="1111 / 1114 1115 1116 111117 1111"; ./push_swap $ARG | ./checker $ARG
+yellow_color "11:"; ARG="10 + 5 3 8 4 5 11 21 105"; ./push_swap $ARG | ./checker $ARG
+yellow_color "12:"; ARG="10 5 3 8 4 5 11 21 105 -"; ./push_swap $ARG | ./checker $ARG
 
 echo ""
 echo "Test edges cases - doubles - Should display ERROR"
 echo "-----"
-yellow_color "1:"; ARG="2 9 5 10 39 +2"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "2:"; ARG="109 1124 32 -32 1124 1 0 45"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "3:"; ARG="10 10 5 3 8 -5"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "4:"; ARG="10 5 3 8 4 5 11 21 105"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "5:"; ARG="1111 1114 1115 1116 111117 1111"; ./push_swap $ARG | ./checker_Mac $ARG
+yellow_color "1:"; ARG="2 9 5 10 39 +2"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "2:"; ARG="109 1124 32 -32 1124 1 0 45"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "3:"; ARG="10 10 5 3 8 -5"; ./push_swap $ARG | ./checker $ARG
+yellow_color "4:"; ARG="10 5 3 8 4 5 11 21 105"; ./push_swap $ARG | ./checker $ARG
+yellow_color "5:"; ARG="1111 1114 1115 1116 111117 1111"; ./push_swap $ARG | ./checker $ARG
 
 echo ""
 echo "Test edges cases - limites - Should display ERROR"
 echo "-----"
-yellow_color "1:"; ARG="2147483647 2147483648 2147483645"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "2:"; ARG="-2147483649 -2147483648"; ./push_swap "$ARG" | ./checker_Mac "$ARG"
-yellow_color "3:"; ARG="10 3 2147483648 4 5 11 21 105"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "4:"; ARG="1111 1114 1115 1116 3147483647 1111"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "5:"; ARG="10 5 3 8 4 5 11 21 105 2147483650"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "6:"; ARG="1111 1114 1115 1116 -3147483647 1111"; ./push_swap $ARG | ./checker_Mac $ARG
-yellow_color "7:"; ARG="10 5 3 8 4 5 11 21 105 -2147483650"; ./push_swap $ARG | ./checker_Mac $ARG
+yellow_color "1:"; ARG="2147483647 2147483648 2147483645"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "2:"; ARG="-2147483649 -2147483648"; ./push_swap "$ARG" | ./checker "$ARG"
+yellow_color "3:"; ARG="10 3 2147483648 4 5 11 21 105"; ./push_swap $ARG | ./checker $ARG
+yellow_color "4:"; ARG="1111 1114 1115 1116 3147483647 1111"; ./push_swap $ARG | ./checker $ARG
+yellow_color "5:"; ARG="10 5 3 8 4 5 11 21 105 2147483650"; ./push_swap $ARG | ./checker $ARG
+yellow_color "6:"; ARG="1111 1114 1115 1116 -3147483647 1111"; ./push_swap $ARG | ./checker $ARG
+yellow_color "7:"; ARG="10 5 3 8 4 5 11 21 105 -2147483650"; ./push_swap $ARG | ./checker $ARG
 
 echo ""
 echo "Test edges cases - Should be fine"
@@ -107,6 +108,7 @@ numbers100=("100 99 98 97 96 95 94 93 92 91 90 89 88 87 86 85 84 83 82 81 80 79 
 	execute_test $numbers100
 numbers100=("36 -92 18 -47 63 -28 51 -84 75 -56 42 -19 60 -73 26 -65 14 -37 48 -68 81 -23 57 -96 33 -54 70 -11 39 -78 22 -89 45 -61 29 -42 66 -15 54 -87 27 -69 92 -32 10 -52 78 -7 93 -45 15 -30 59 -74 21 -58 87 -13 71 -36 49 -81 37 -64 19 -49 84 -22 56 -93 31 -50 68 -9 46 -72 24 -67 12 -44 64 -80 40 -55 76 -17 53 -88 28 -71 91 -34 8 -60 67 -25 43 -77 20 -53")
 	execute_test $numbers100
+
 
 echo ""
 echo "Test for 500 numbers"

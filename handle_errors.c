@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 11:40:14 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/04/02 12:55:49 by natalia       ########   odam.nl         */
+/*   Updated: 2024/04/03 15:24:44 by nmedeiro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error_exit(void)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit (1);
 }
 
@@ -34,9 +34,13 @@ int	error_syntax(char **argv)
 		{
 			if (!(c[j] == '+' || c[j] == '-' || (c[j] >= '0' && c[j] <= '9')))
 				return (1);
-			if ((c[j] == '+' || c[j] == '-')
-				&& !(c[j + 1] >= '0' && c[j + 1] <= '9'))
-				return (1);
+			if (c[j] == '+' || c[j] == '-')
+			{
+				if (!(c[j + 1] >= '0' && c[j + 1] <= '9'))
+					return (1);
+				if (j != 0 && c[j - 1] != ' ')
+					return (1);
+			}
 			j++;
 		}
 		i++;
@@ -55,13 +59,15 @@ int	check_doubles(char **argv)
 		j = i + 1;
 		while (argv[j])
 		{
-			if (argv[i][0] == '+' || argv[j][0] == '+')
+			if (argv[i][0] == '+' || argv[j][0] == '-')
 			{
 				if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 					return (1);
 			}
 			if (ft_strcmp(argv[i], argv[j]) == 0)
 				return (1);
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return(1);
 			j++;
 		}
 		i++;

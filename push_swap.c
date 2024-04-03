@@ -6,7 +6,7 @@
 /*   By: natalia <natalia@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/03/27 11:35:14 by nmedeiro      #+#    #+#                 */
-/*   Updated: 2024/03/29 12:57:47 by natalia       ########   odam.nl         */
+/*   Updated: 2024/04/03 15:02:09 by nmedeiro      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (1);
+	if (argc == 2 && (argv[1][0] == false))
+		error_exit();
 	if (argc == 2)
 		numbers = ft_split(argv[1], ' ');
 	else
